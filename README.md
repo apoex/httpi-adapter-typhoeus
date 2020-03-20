@@ -1,15 +1,16 @@
-# HTTPI::Adapter::Typhoeus
+# httpi-adapter-typhoeus
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/httpi/adapter/typhoeus`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Gem Version](https://badge.fury.io/rb/httpi-adapter-typhoeus.svg)](https://badge.fury.io/rb/httpi-adapter-typhoeus)
+[![Build Status](https://travis-ci.org/apoex/httpi-adapter-typhoeus.svg?branch=master)](https://travis-ci.org/apoex/httpi-adapter-typhoeus)
 
-TODO: Delete this and the text above, and describe your gem
+httpi-adapter-typhoeus lets you use [Typhoeus](https://github.com/typhoeus/typhoeus) with [HTTPI](https://github.com/savonrb/httpi)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'httpi-adapter-typhoeus'
+gem "httpi-adapter-typhoeus"
 ```
 
 And then execute:
@@ -22,7 +23,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Configure `HTTPI` to use the `Typhoeus` adapter globally:
+
+```ruby
+HTTPI.adapter = :curb
+```
+
+If you're using [Savon](https://github.com/savonrb/savon) and want to configure one specific
+client to use the adapter, you can initialize Savon with:
+
+```ruby
+Savon.client(adapter: :typhoeus)
+```
 
 ## Development
 
