@@ -7,8 +7,6 @@ module HTTPI
         extend ConnectionError
       end
 
-      VERSION = "0.1.0"
-
       register :typhoeus, deps: %w(typhoeus)
 
       def initialize(request)

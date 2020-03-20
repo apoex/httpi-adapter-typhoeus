@@ -1,10 +1,9 @@
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "httpi/adapter/typhoeus"
 
 Gem::Specification.new do |spec|
   spec.name          = "httpi-adapter-typhoeus"
-  spec.version       = HTTPI::Adapter::Typhoeus::VERSION
+  spec.version       = "0.1.0"
   spec.authors       = ["Micke Lisinge"]
   spec.email         = ["micke@apoex.se"]
 
