@@ -28,12 +28,12 @@ module HTTPI
 
         response = @client.run
 
-        if response.success?
-          Response.new(response.code, response.headers, response.body)
-        elsif response.timed_out?
+        if response.timed_out?
           raise TimeoutError
         elsif response.response_code == 0
           raise TyphoesConnectionError, response.return_message
+        else
+          Response.new(response.code, response.headers, response.body)
         end
       end
 
