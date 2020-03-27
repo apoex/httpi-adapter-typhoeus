@@ -31,7 +31,12 @@ module HTTPI
         if response.timed_out?
           raise TimeoutError
         elsif response.response_code == 0
-          raise TyphoesConnectionError, response.return_message
+          case response.return_message
+          when /ssl/i
+            raise SSLError, response.return_message
+          else
+            raise TyphoesConnectionError, response.return_message
+          end
         else
           Response.new(response.code, response.headers, response.body)
         end
