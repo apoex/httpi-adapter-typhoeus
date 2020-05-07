@@ -26,7 +26,7 @@ Or install it yourself as:
 Configure `HTTPI` to use the `Typhoeus` adapter globally:
 
 ```ruby
-HTTPI.adapter = :curb
+HTTPI.adapter = :typhoeus
 ```
 
 If you're using [Savon](https://github.com/savonrb/savon) and want to configure one specific
