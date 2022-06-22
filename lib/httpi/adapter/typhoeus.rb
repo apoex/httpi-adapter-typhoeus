@@ -71,6 +71,7 @@ module HTTPI
 
         if ssl.verify_mode == :none
           @client.options[:ssl_verifyhost] = 0
+          @client.options[:ssl_verifypeer] = false
         else
           @client.options[:ssl_verifyhost] = 2
           @client.options[:ssl_verifypeer] = ssl.verify_mode == :peer
